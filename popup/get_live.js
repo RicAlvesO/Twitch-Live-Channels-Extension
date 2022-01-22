@@ -1,26 +1,53 @@
-function isLive(name){
-    //verifyAPI(name);
-    return false;
+
+function isLive(name) {
+    return true;
 }
 
-function addLiveUser(name){
-    const op1 = document.createElement("div");
-    op1.className = "page-choice";
-    const node1 = document.createTextNode(name);
-    op1.append(node1);
+function addUser(name){
+    const row = document.createElement("div");
+    row.className = "row";
+    const state = document.createElement("div");
+    state.className = "state";
+    const op = document.createElement("div");
+    op.className = "page-choice";
+    const node = document.createTextNode(name);
+    op.style.fontFamily = "Georgia, serif";
+    op.append(node);
     const element = document.getElementById("main");
+    row.append(op);
     if(isLive(name)){
-        op1.style.color = "#ffffffbb";
-        op1.style.fontFamily = "Georgia, serif";
-        element.insertBefore(op1,element.firstChild);
+        const st = document.createTextNode("🟢");
+        state.append(st);
+        row.append(state);
+        op.style.color = "#ffffffbb";
+        element.insertBefore(row,element.firstChild);
     }
-    else{
-        op1.style.color = "#787878bb";
-        op1.style.fontFamily = "Charcoal,sans-serif";
-        element.appendChild(op1);
+    else {
+        const st = document.createTextNode("🔴");
+        state.append(st);
+        row.append(state);
+        op.style.color = "#00000077";
+        element.appendChild(row);
     }
 }
 
-addLiveUser("xQcOW");
-addLiveUser("LEC");
-addLiveUser("VALORANT");
+function addInput(){
+    const row = document.createElement("div");
+    row.className = "row";
+    const input = document.createElement("input");
+    input.className = "input";
+    input.style.fontFamily = "Georgia, serif";
+    input.placeholder = "Streamer Name..."
+    const ok = document.createElement("button");
+    ok.className = "commit";
+    const node = document.createTextNode("+");
+    ok.style.fontFamily = "Georgia, serif";
+    ok.append(node);
+    row.append(input);
+    row.append(ok);
+    const element = document.getElementById("main");
+    element.append(row);
+}
+
+addUser("xQcOW");
+addInput();
