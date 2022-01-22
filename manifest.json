@@ -1,0 +1,14 @@
+{
+    "description": "Twitch Live Channels",
+    "manifest_version": 2,
+    "name": "button-live",
+    "version": "0.0.1",
+    "browser_action": {
+        "browser_style": true,
+        "default_popup" : "popup/choose_page.html",
+        "default_icon": {
+            "16": "icons/icon-16.png",
+            "32": "icons/icon-32.png"
+        }
+    }
+}
