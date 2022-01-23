@@ -1,6 +1,15 @@
 html, body {
     width: 300px;
-    background-color: rgb(151, 79, 219);
+    background-color: rgb(58, 58, 58);
+}
+
+.title {
+    height: 40px;
+    width: 100%;
+    padding: 10px;
+    background-color: #956fffb9;
+    font-size: 1.5em;
+    text-align: center;
 }
 
 .row {
@@ -27,23 +36,32 @@ html, body {
     float : right;
 }
 
+.inp_row {
+    height: 40px;
+    width: 100%;
+    padding: 4px;
+    background-color: #956fffb9;
+}
+
 .input {
     width: 88%;
     padding: 4px;
     font-size: 1em;
     text-align: center;
-    background-color: rgb(249, 180, 255);
+    background-color: rgb(58, 58, 58);
+    border-radius: 15px;
     float : center;
 }
 
 .commit {
     width: 10%;
     padding: 4px;
-    text-align: center;
-    background-color: rgb(173, 129, 255);
+    text-align: center;    
+    background-color: rgb(58, 58, 58);
+    border-radius: 15px;
     float : right;
 }
 
 .row:hover {
-    background-color: #00000049;
+    background-color: #956fffb9;
 }

@@ -1,0 +1,90 @@
+function isLive(name) {
+
+    //////////
+    // TODO //
+    //////////
+
+    return null;
+}
+
+//Create new stream user
+function addUser(name) {
+    
+    //Live state
+    const state = document.createElement("div");
+    state.className = "state";
+    
+    //User name
+    const op = document.createElement("div");
+    op.className = "page-choice";
+    op.style.fontFamily = "Georgia, serif";
+    const node = document.createTextNode(name);
+    op.append(node);
+
+    //Row for new user
+    const row = document.createElement("div");
+    row.className = "row";
+    row.append(op);
+    row.append(state);
+    
+    //Check if live and add to list
+    const element = document.getElementById("channels");
+    const sta = isLive(name);
+    if (sta) {
+        const st = document.createTextNode("🟢");
+        state.append(st);
+        op.style.color = "#ffffffbb";
+        element.insertBefore(row, element.firstChild);
+    }
+    else if (sta == false) {
+        const st = document.createTextNode("🔴");
+        state.append(st);
+        op.style.color = "#00000077";
+        element.appendChild(row);
+    }
+    else {
+        const st = document.createTextNode("👀");
+        state.append(st);
+        op.style.color = "#ffffffbb";
+        element.appendChild(row);
+    }
+}
+
+//Click on channels
+document.addEventListener("click", function (e) {
+    if (!e.target.classList.contains("page-choice")) {
+        return;
+    }
+
+    var chosenPage = "https://www.twitch.tv/" + e.target.textContent;
+    browser.tabs.create({
+        url: chosenPage
+    });
+
+});
+
+//Hover on channel status
+document.addEventListener("mouseover", function (e) {
+    if (!e.target.classList.contains("state")) {
+        return;
+    }
+    
+    e.target.textContent ="⌛";
+    setTimeout(function () {
+        e.target.textContent = "👀";
+    }, 1000);
+
+});
+
+//Click on add new channel
+document.addEventListener("click", function (e) {
+    if (!e.target.classList.contains("commit")) {
+        return;
+    }
+
+    var f = document.getElementById("new_channel");
+    addUser(f.value);
+    f.value = null;
+
+});
+

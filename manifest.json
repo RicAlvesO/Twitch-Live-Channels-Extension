@@ -1,7 +1,7 @@
 {
     "description": "Twitch Live Channels",
     "manifest_version": 2,
-    "name": "button-live",
+    "name": "LiveChannels TTV",
     "version": "0.0.1",
     "browser_action": {
         "browser_style": true,
