@@ -6,7 +6,7 @@ function createElems(){
     title.className = "title";
     title.style.fontFamily = "Georgia, serif";
     title.style.color = "#ffffffbb";
-    const tit = document.createTextNode("Live Channels TTV v0.0.1");
+    const tit = document.createTextNode("Live Channels TTV v0.0.3");
     title.append(tit);
     const elem = document.getElementById("top");
     elem.append(title);

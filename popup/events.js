@@ -52,6 +52,15 @@ function addUser(name) {
 
 //Click on channels
 document.addEventListener("click", function (e) {
+    if (!e.target.classList.contains("state")) {
+        return;
+    }
+    browser.storage.local.remove(e.target.parentNode.firstChild.firstChild.textContent);
+    e.target.parentNode.remove();
+});
+
+//Click on channels
+document.addEventListener("click", function (e) {
     if (!e.target.classList.contains("page-choice")) {
         return;
     }
@@ -69,7 +78,7 @@ document.addEventListener("mouseover", function (e) {
         return;
     }
     
-    e.target.textContent ="⌛";
+    e.target.textContent ="🗑️";
     setTimeout(function () {
         e.target.textContent = "👀";
     }, 1000);
