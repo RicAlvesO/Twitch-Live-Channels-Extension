@@ -12,6 +12,11 @@ html, body {
     text-align: center;
 }
 
+.channel_list{
+    height: 200px;
+    overflow: auto; 
+}
+
 .row {
     height: 40px;
     width: 100%;
@@ -56,7 +61,7 @@ html, body {
 .commit {
     width: 10%;
     padding: 4px;
-    text-align: center;    
+    text-align: center;   
     background-color: rgb(58, 58, 58);
     border-radius: 15px;
     float : right;

@@ -13,6 +13,7 @@ function addUser(name) {
     //Live state
     const state = document.createElement("div");
     state.className = "state";
+    state.onmouseover = function () { state.textContent = "🗑️"; };
     
     //User name
     const op = document.createElement("div");
@@ -32,18 +33,21 @@ function addUser(name) {
     const sta = isLive(name);
     if (sta) {
         const st = document.createTextNode("🟢");
+        state.onmouseleave = function () { state.textContent ="🟢"; };
         state.append(st);
         op.style.color = "#ffffffbb";
         element.insertBefore(row, element.firstChild);
     }
     else if (sta == false) {
         const st = document.createTextNode("🔴");
+        state.onmouseleave = function () { state.textContent ="🔴"; };
         state.append(st);
         op.style.color = "#00000077";
         element.appendChild(row);
     }
     else {
         const st = document.createTextNode("👀");
+        state.onmouseleave = function () { state.textContent ="👀"; };
         state.append(st);
         op.style.color = "#ffffffbb";
         element.appendChild(row);
@@ -78,10 +82,10 @@ document.addEventListener("mouseover", function (e) {
         return;
     }
     
-    e.target.textContent ="🗑️";
-    setTimeout(function () {
-        e.target.textContent = "👀";
-    }, 1000);
+    //e.target.textContent ="🗑️";
+    //setTimeout(function () {
+    //    e.target.textContent = "👀";
+    //}, 1000);
 
 });
 
