@@ -54,7 +54,7 @@ function addUser(name) {
     }
 }
 
-//Click on channels
+//Delete channels
 document.addEventListener("click", function (e) {
     if (!e.target.classList.contains("state")) {
         return;
@@ -69,23 +69,10 @@ document.addEventListener("click", function (e) {
         return;
     }
 
-    var chosenPage = "https://www.twitch.tv/" + e.target.textContent;
+    var chosenPage = "https://www.twitch.tv/" + e.target.textContent.replace(/(\r\n|\n|\r|\s)/gm, "");
     browser.tabs.create({
         url: chosenPage
     });
-
-});
-
-//Hover on channel status
-document.addEventListener("mouseover", function (e) {
-    if (!e.target.classList.contains("state")) {
-        return;
-    }
-    
-    //e.target.textContent ="🗑️";
-    //setTimeout(function () {
-    //    e.target.textContent = "👀";
-    //}, 1000);
 
 });
 
