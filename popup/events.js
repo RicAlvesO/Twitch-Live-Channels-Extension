@@ -84,7 +84,22 @@ document.addEventListener("click", function (e) {
 
     var f = document.getElementById("new_channel");
     addUser(f.value);
+    browser.storage.local.set({ [f.value]: 0 });
     f.value = null;
-
 });
 
+function onError(error) {
+    console.log(error);
+}
+
+function initialize() {
+  var gettingAllStorageItems = browser.storage.local.get(null);
+  gettingAllStorageItems.then((results) => {
+    var sKeys = Object.keys(results);
+    for (let sKey of sKeys) {
+      addUser(sKey);
+    }
+  }, onError);
+}
+
+document.addEventListener('DOMContentLoaded', initialize);

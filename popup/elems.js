@@ -39,5 +39,4 @@ function createElems(){
     const element = document.getElementById("entry");
     element.append(row);
 }
-
 createElems();
