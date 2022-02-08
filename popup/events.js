@@ -9,6 +9,8 @@ function isLive(name) {
 
 //Create new stream user
 function addUser(name) {
+
+    if(!name){return;}
     
     //Live state
     const state = document.createElement("div");
@@ -38,7 +40,7 @@ function addUser(name) {
         op.style.color = "#ffffffbb";
         element.insertBefore(row, element.firstChild);
     }
-    else if (sta == false) {
+    else if (sta === false) {
         const st = document.createTextNode("🔴");
         state.onmouseleave = function () { state.textContent ="🔴"; };
         state.append(st);
