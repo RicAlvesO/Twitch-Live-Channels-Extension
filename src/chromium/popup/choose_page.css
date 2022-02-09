@@ -1,0 +1,70 @@
+html, body {
+    width: 300px;
+    background-color: rgb(58, 58, 58);
+    margin: 0px;
+}
+
+.title {
+    height: 40px;
+    width: 100%;
+    padding: 10px;
+    background-color: #956fffb9;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.channel_list{
+    height: 200px;
+    overflow: auto; 
+}
+
+.row {
+    height: 40px;
+    width: 100%;
+}
+
+.page-choice {
+    width: 80%;
+    padding: 4px;
+    font-size: 1.5em;
+    text-align: center;
+    cursor: pointer;
+    float : left;
+}
+
+.state {
+    width: 10%;
+    padding: 7px;
+    font-size: 1em;
+    text-align: center;
+    cursor: pointer;
+    float : right;
+}
+
+.inp_row {
+    height: 40px;
+    width: 100%;
+    padding: 4px;
+    background-color: #956fffb9;
+}
+
+.input {
+    width: 81%;
+    height: 85%;
+    font-size: 1em;
+    text-align: center;
+    background-color: rgb(58, 58, 58);
+    border-radius: 25px;
+}
+
+.commit {
+    width: 14%;
+    height: 100%;
+    text-align: center;   
+    background-color: rgb(58, 58, 58);
+    border-radius: 30px;
+}
+
+.row:hover {
+    background-color: #956fffb9;
+}

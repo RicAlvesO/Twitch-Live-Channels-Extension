@@ -1,0 +1,17 @@
+{
+    "description": "Twitch Live Channels",
+    "manifest_version": 2,
+    "name": "LiveChannels TTV",
+    "version": "0.1.0",
+    "browser_action": {
+        "browser_style": true,
+        "default_popup" : "popup/choose_page.html",
+        "default_icon": {
+            "48": "icons/icon-48.png",
+            "96": "icons/icon-96.png"
+        }
+    },
+    "permissions":[
+        "storage"
+    ]
+}
