@@ -1,3 +1,3 @@
-# Twitch Live Channels Extension
+# Twitch Channels Extension
 
-In development.
+Extension for keeping your channels at the distance of a click!
